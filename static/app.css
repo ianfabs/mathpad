@@ -1,0 +1,51 @@
+:root {
+  --c-black: #1a1a1a;
+  --c-white: #e1e1e1;
+  --c-grey: #898989;
+  --c-purple: #b462ff;
+  --c-fuschia: #ff45b4;
+  --c-blue: #18b6ff;
+  --c-green: #1beb9e;
+  --c-orange: #ff9528;
+  --c-yellow: #dddd25;
+  --line: 2.5ch;
+  --font: 'IBM', monospace;
+}
+
+body {
+  color: white;
+  font-size: 2vw;
+  margin: 0;
+  background: var(--c-black);
+  color: var(--c-white);
+  min-height: 100vh;
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: var(--line);
+  letter-spacing: 0.01em;
+}
+
+.blue {
+  color: var(--c-blue);
+  --c-current: var(--c-blue);
+}
+
+@media (min-width: 1024px) {
+  .large {
+    font-size: 4vw;
+    line-height: 1.11111111em;
+    font-weight: 200;
+  }
+}
+
+.white {
+  color: var(--c-white);
+  --c-current: var(--c-white);
+}
+
+a:hover, .selected, .hover:hover {
+  color: var(--c-black);
+  background: var(--c-current);
+  box-shadow: 0.4ch 0 0 0 var(--c-current), -0.3ch 0 0 0 var(--c-current), 0.4ch 0.2ch 0 0 var(--c-current), -0.3ch 0.2ch 0 0 var(--c-current);
+  opacity: 0.8;
+}
