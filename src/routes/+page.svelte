@@ -21,8 +21,14 @@
 
 <style>
 	section {
-		border: 1px solid var(--c-grey);
-    padding: 10px 20px;
+    border: 8px dashed var(--c-white);
+    padding-top: 10px;
+		padding-left: 20px;
+		/* width: 30vw; */
+		width: 95%;
+  }
+	section:last-of-type {
+		padding-left: 20px;
 	}
 	.editor {
 		height: 100%;
