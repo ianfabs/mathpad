@@ -8,12 +8,12 @@
 
 </script>
 
-<section class="full md:py">
+<section class="md:py">
   <div class="editor" contenteditable="true" bind:innerText={value}>
     Start typing here
   </div>
 </section>
-<section class="full md:py">
+<section class="md:py">
   <output>
     {@html result}
   </output>
@@ -22,15 +22,19 @@
 <style>
 	section {
     border: 8px dashed var(--c-white);
-    padding-top: 10px;
-		padding-left: 20px;
-		/* width: 30vw; */
-		width: 95%;
   }
-	section:last-of-type {
-		padding-left: 20px;
-	}
 	.editor {
 		height: 100%;
 	}
+	.editor:focus {
+		outline: none;
+	}
+	@media (max-width: 811px) {
+    section {
+			min-height: 35vh;
+		}
+		section:first {
+			/* margin-bottom: 15vh; */
+		}
+  }
 </style>

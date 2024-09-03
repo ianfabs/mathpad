@@ -3,8 +3,8 @@
   <title>Mathpad</title>
 </svelte:head>
 
-<main>
-  <header class="flex row">
+<main class="pad">
+  <header class="flex">
     <hgroup>
       <div class="large title white">Mathpad</div>
       <nav>
@@ -17,18 +17,21 @@
       >[github://ianfabs/mathpad]</a
     >
   </header>
-  <slot></slot>
+  <section id=slot>
+    <slot></slot>
+  </section>
 </main>
 
 <style>
+  :global(body > div) {
+    height: 100%;
+  }
   main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr minmax(250px, 85vh);
-    margin-left: 20px;
-    padding-left: 20px;
-    margin-right: 20px;
-    width: 95%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr;
+    height: 100%;
+    min-height: 90vh;
   }
   header {
     grid-column: 1 / span 2;
@@ -37,5 +40,21 @@
     padding: 10px;
     justify-content: space-between;
   }
-  
+  #slot {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  @media (min-width: 1024px) {
+    #slot {
+      flex-direction: row;
+    }
+  }
+  @media (max-width: 811px) {
+    header {
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: max-content;
+    }
+  }
 </style>
